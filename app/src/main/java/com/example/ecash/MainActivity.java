@@ -4,22 +4,34 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.ecash.FragmentClass.Home;
+import com.example.ecash.FragmentClass.Inbox;
+import com.example.ecash.FragmentClass.SQScan;
+import com.example.ecash.FragmentClass.Search;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 public class MainActivity extends AppCompatActivity {
     RelativeLayout balance_bt;
     TextView bt_ic_tk, textView, tv_balance;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +42,15 @@ public class MainActivity extends AppCompatActivity {
         bt_ic_tk = findViewById(R.id.bt_ic_tk);
         textView = findViewById(R.id.text_tap);
         tv_balance = findViewById(R.id.tv_balance);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
+
+        Check_Balance_Method();
+        LoadBottomNavigation();
+
+    }
+
+    private void Check_Balance_Method(){
 
         balance_bt.setOnClickListener(new View.OnClickListener() {
             private boolean isClicked = false; // Track if button was clicked before
@@ -45,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     int parentWidth = parent.getWidth();
 
                     // Calculate the target X position relative to the parent
-                    int targetX = parentWidth - bt_ic_tk.getWidth() - 20; // Adjust margin as needed
+                    int targetX = parentWidth - bt_ic_tk.getWidth() - 10; // Adjust margin as needed
 
                     // Current X position of the view within the parent
                     int currentX = (int) bt_ic_tk.getX();
@@ -111,11 +131,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
     }
+
+    private void LoadBottomNavigation() {
+
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.bottom_home) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Home()).commit();
+                    return true;
+                }  else if (itemId == R.id.bottom_scan_QR) {
+                    startActivity(new Intent(MainActivity.this, QRScannerActivity.class));
+                    return true;
+                } else if (itemId == R.id.bottom_search) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Search()).commit();
+                    return true;
+                }
+
+                else if (itemId == R.id.bottom_Inbox) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Inbox()).commit();
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
 }

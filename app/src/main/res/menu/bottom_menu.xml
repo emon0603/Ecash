@@ -1,0 +1,24 @@
+<!-- res/menu/drawer_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+
+    <item
+        android:id="@+id/bottom_scan_QR"
+        android:icon="@drawable/baseline_qr_code_scanner_24"
+        android:title="Scan QR" />
+    <item
+        android:id="@+id/bottom_search"
+        android:icon="@drawable/baseline_search_24"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/bottom_Inbox"
+        android:icon="@drawable/ic_message"
+        android:title="Inbox"
+        />
+
+</menu>
