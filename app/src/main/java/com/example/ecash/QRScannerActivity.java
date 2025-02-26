@@ -1,5 +1,6 @@
 package com.example.ecash;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,22 +40,15 @@ public class QRScannerActivity extends AppCompatActivity {
 
         //startQRScanner();
     }
-
-
-
-
-
-
-
-
-
-
-    // QR Scanner Callback
+        // QR Scanner Callback
     private final BarcodeCallback callback = new BarcodeCallback() {
         @Override
         public void barcodeResult(BarcodeResult result) {
             if (result.getText() != null) {
-                barcodeScannerView.pause();
+                //barcodeScannerView.pause();
+
+                Toast.makeText(QRScannerActivity.this, "Scanned: " + result.getText(), Toast.LENGTH_SHORT).show();
+
                 // Scan result found, do something with result.getText()
                 System.out.println("Scanned: " + result.getText());
             }
@@ -81,9 +75,18 @@ public class QRScannerActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 }

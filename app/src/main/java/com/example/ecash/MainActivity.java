@@ -1,5 +1,8 @@
 package com.example.ecash;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -11,13 +14,16 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
@@ -30,8 +36,13 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     RelativeLayout balance_bt;
+    LinearLayout TopBarLayout;
     TextView bt_ic_tk, textView, tv_balance;
     BottomNavigationView bottomNavigationView;
+
+    boolean Exit = false;
+    boolean Exit2 = true;
+    boolean isHome = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.text_tap);
         tv_balance = findViewById(R.id.tv_balance);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        TopBarLayout = findViewById(R.id.TopBarLayout);
 
 
         Check_Balance_Method();
@@ -91,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     firstSet.addListener(new AnimatorListenerAdapter() {
                         @Override
                         public void onAnimationEnd(Animator animation) {
-                            textView.setVisibility(View.GONE);
-                            tv_balance.setVisibility(View.VISIBLE);
+                            textView.setVisibility(GONE);
+                            tv_balance.setVisibility(VISIBLE);
 
                             // **5 seconds delay before reversing**
                             new Handler().postDelayed(() -> {
@@ -114,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
                                 secondSet.addListener(new AnimatorListenerAdapter() {
                                     @Override
                                     public void onAnimationEnd(Animator animation) {
-                                        textView.setVisibility(View.VISIBLE);
-                                        tv_balance.setVisibility(View.GONE);
+                                        textView.setVisibility(VISIBLE);
+                                        tv_balance.setVisibility(GONE);
                                         isClicked = false; // **Enable button again**
                                     }
                                 });
@@ -135,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void LoadBottomNavigation() {
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Home()).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("SetTextI18n")
@@ -143,22 +156,34 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
                 if (itemId == R.id.bottom_home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Home()).commit();
+                    new Handler().postDelayed(() -> TopBarLayout.setVisibility(View.VISIBLE), 100);
                     return true;
                 }  else if (itemId == R.id.bottom_scan_QR) {
                     startActivity(new Intent(MainActivity.this, QRScannerActivity.class));
                     return true;
                 } else if (itemId == R.id.bottom_search) {
+                    TopBarLayout.setVisibility(View.GONE);
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Search()).commit();
                     return true;
                 }
 
                 else if (itemId == R.id.bottom_Inbox) {
+                    TopBarLayout.setVisibility(View.GONE);
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Inbox()).commit();
                     return true;
                 }
                 return false;
             }
         });
+    }
+
+
+    public void onBackPressed() {
+
+            if (isHome && Exit2) {
+                finishAffinity();
+            }
+
     }
 
 }
