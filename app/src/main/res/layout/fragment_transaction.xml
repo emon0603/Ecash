@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QRScannerActivity"
+    tools:context=".FragmentClass.Transaction"
     android:orientation="vertical"
     >
 
-    <!-- AppBar with Toolbar -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
 
-        >
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="Search"
-            app:titleCentered="true"
-            app:titleTextColor="@color/white"
-            />
-
-
-    </com.google.android.material.appbar.AppBarLayout>
 
 
     <LinearLayout
@@ -36,15 +19,6 @@
         android:gravity="center"
         >
 
-        <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:src="@drawable/ic_arrow_back"
-            android:layout_weight="1"
-            android:layout_marginLeft="@dimen/_10sdp"
-            app:tint="?attr/colorPrimary"
-
-            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,13 +32,13 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
                 android:background="@drawable/bg_search"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
                 android:layout_marginRight="@dimen/_10sdp"
 
                 >
@@ -76,7 +50,7 @@
                     android:layout_centerVertical="true"
                     android:tint="#757575"
                     tools:ignore="UseAppTint"
-                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
                     />
 
                 <EditText
@@ -84,20 +58,47 @@
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:layout_centerInParent="true"
-                    android:hint="Search for contract"
+                    android:hint="Search by TrxId or number"
                     android:textSize="@dimen/_12ssp"
                     android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_25sdp"
                     />
 
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/bg_filter"
+                android:paddingTop="@dimen/_9sdp"
+                android:paddingBottom="@dimen/_9sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                >
+
                 <ImageView
-                    android:layout_width="@dimen/_15sdp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_microphone"
-                    android:layout_centerVertical="true"
-                    android:tint="#858585"
-                    tools:ignore="UseAppTint"
-                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:src="@drawable/ic_filter"
                     />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"
+                    android:textColor="?attr/colorPrimary"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textStyle="bold"
+                    />
+
+
+
 
             </LinearLayout>
 
@@ -119,18 +120,6 @@
         android:layout_height="@dimen/_3sdp"
         android:background="#EBEBEB"
         />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Suggestions"
-        android:textColor="#858585"
-        android:layout_margin="@dimen/_10sdp"
-        />
-
-
-
 
 
 

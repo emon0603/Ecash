@@ -3,12 +3,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentClass.Home">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/TopBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/_65sdp"
+        android:background="@drawable/bg_appbar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+
+
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/mypic"
+                android:layout_marginLeft="@dimen/_15sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/usernametv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rakibul Emon"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="@dimen/_3sdp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_140sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    app:cardCornerRadius="@dimen/_20sdp"
+                    app:cardBackgroundColor="@color/white">
+
+                    <RelativeLayout
+                        android:id="@+id/balance_bt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/bt_ic_tk"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:text="৳"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:background="@drawable/bg_balance_oval"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/text_tap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tap for Balance"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="?attr/colorPrimary"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/_30sdp"
+
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20.00"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="?attr/colorPrimary"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:visibility="gone"
+                            android:layout_centerInParent="true"
+
+
+                            />
+
+
+
+
+                    </RelativeLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/trophyBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/ic_trophy"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+
+        <ImageButton
+            android:id="@+id/MenuBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_launcher_foreground"
+            app:tint="@color/white"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+
+
+
+
+    </LinearLayout>
 
 </FrameLayout>

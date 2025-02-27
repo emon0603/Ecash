@@ -1,6 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Ecash" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+
         <!-- Primary color -->
         <item name="colorPrimary">#E2136E</item>
         <!-- Dark Primary color (used in status bar) -->
@@ -49,5 +52,10 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/_10ssp</item> <!-- টেক্সট সাইজ ছোট করা হলো -->
+    </style>
+
 
 </resources>
