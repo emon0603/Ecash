@@ -58,4 +58,60 @@
     </style>
 
 
+    <style name="Theme.Login" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!-- Primary color -->
+        <item name="colorPrimary">#E2136E</item>
+        <!-- Dark Primary color (used in status bar) -->
+        <item name="colorPrimaryDark">#E2136E</item>
+        <!-- Accent color -->
+        <item name="colorAccent">#E2136E</item>
+        <!-- Color for activated controls -->
+        <item name="colorControlActivated">#ffffff</item>
+        <!-- Text color for toolbar and title -->
+        <item name="android:textColorPrimary">#ffffff</item>
+        <!-- Background color -->
+        <item name="android:windowBackground">#ffffff</item>
+        <!-- Floating action button color -->
+        <item name="colorSurface">#ffffff</item>
+        <!-- Set RadioButton color -->
+        <item name="android:buttonTint">#E2136E</item>
+
+
+        <!-- Set default text color for AutoCompleteTextView -->
+        <item name="android:textColor">#000000</item> <!-- Black text color -->
+
+        <!-- Set hint text color -->
+        <item name="android:textColorHint">#8a8a8a</item> <!-- Gray hint color -->
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">#B9B9B9</item>
+    </style>
+
+    <style name="CustomKeypadButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:textSize">@dimen/_30ssp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">#8a8a8a</item> <!-- Text Color -->
+        <item name="android:textStyle">bold</item> <!-- Text Color -->
+        <item name="android:color">#E2136E</item>
+
+
+    </style>
+
+    <style name="CustomKeypadSpacer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:color">#E2136E</item>
+    </style>
+
+
+
+
 </resources>

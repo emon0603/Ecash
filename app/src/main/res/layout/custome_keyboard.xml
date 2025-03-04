@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <!-- Custom Number Keyboard -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8a8a8a"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10ssp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/customKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:paddingBottom="@dimen/_10sdp"
+
+
+            >
+
+            <!-- Number Buttons -->
+            <Button android:id="@+id/btn1" android:text="1" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn2" android:text="2" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn3" android:text="3" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn4" android:text="4" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn5" android:text="5" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn6" android:text="6" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn7" android:text="7" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn8" android:text="8" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn9" android:text="9" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btnBackspace" android:text="⌫" style="@style/CustomKeypadButton"/>
+            <Button android:id="@+id/btn0" android:text="0" style="@style/CustomKeypadButton"/>
+            <View style="@style/CustomKeypadSpacer"/>
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
