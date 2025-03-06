@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:width="2dp"/> <!-- কার্সরের মোটা/পাতলা করা -->
+    <solid android:color="?attr/colorPrimary"/> <!-- কার্সরের রঙ লাল -->
+</shape>

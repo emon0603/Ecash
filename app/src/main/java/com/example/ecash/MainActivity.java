@@ -33,22 +33,25 @@ import com.example.ecash.FragmentClass.Home;
 import com.example.ecash.FragmentClass.Inbox;
 import com.example.ecash.FragmentClass.SQScan;
 import com.example.ecash.FragmentClass.Search;
+import com.example.ecash.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
-
     boolean Exit = false;
     boolean Exit2 = true;
     boolean isHome = true;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        // Initialize the binding object
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        // Set the content view using binding.root
+        setContentView(binding.getRoot());
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = prefs.edit();
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new Home()).commit();
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        binding.bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -98,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
                 finishAffinity();
             }
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Clean up binding object to avoid memory leaks
+        binding = null;
     }
 
 }

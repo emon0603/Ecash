@@ -113,7 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_20sdp"
         >
 
@@ -121,24 +121,62 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Account Number"
-            android:textColor="@color/black"
+            android:textColor="#8a8a8a"
+            android:textStyle="bold"
+
             />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint=""
-            android:inputType="number"
-            />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+88"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"
+                    />
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="01755756373"
+                    android:textColor="@color/black"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:textSize="@dimen/_15ssp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    />
+
+
+            </LinearLayout>
+
+
 
 
     </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#F4F4F4"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
 
         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_20sdp"
         >
 
@@ -146,50 +184,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="bKash PIN"
-            android:textColor="@color/black"
+            android:textColor="#8a8a8a"
+            android:textStyle="bold"
             />
 
-        <EditText
-            android:id="@+id/pinEditText"
+            <EditText
+                android:id="@+id/pinEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:hint="Enter bKash PIN"
+                android:gravity="center|left"
+                android:maxLength="5"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="false"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                />
+
+
+
+
+
+
+        </LinearLayout>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberPassword"
-            android:hint="Enter bKash PIN"
-            android:gravity="center|left"
-            android:maxLength="5"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-
+            android:layout_height="@dimen/_1sdp"
+            android:background="#F4F4F4"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             />
-
-
-
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
 
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="bKash PIN? Try PIN Reset"
+                android:text="Forget PIN? Try PIN Reset"
                 android:textColor="?attr/colorPrimary"
                 />
 
 
         </LinearLayout>
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
 
             >
 
@@ -227,7 +285,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#8a8a8a"
+            android:background="@drawable/bg_nextbt"
             android:padding="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10ssp"
 
@@ -273,7 +331,9 @@
             <Button android:id="@+id/btn9" android:text="9" style="@style/CustomKeypadButton"/>
             <Button android:id="@+id/btnBackspace" android:text="⌫" style="@style/CustomKeypadButton"/>
             <Button android:id="@+id/btn0" android:text="0" style="@style/CustomKeypadButton"/>
-            <View style="@style/CustomKeypadSpacer"/>
+            <ImageView android:id="@+id/btn_enter" android:src="@drawable/ic_enter" style="@style/CustomKeypadButton" android:padding="@dimen/_3sdp"/>
+
+
 
 
         </GridLayout>
