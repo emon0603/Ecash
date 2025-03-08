@@ -7,6 +7,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,12 +17,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.ecash.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Home extends Fragment {
@@ -31,6 +40,11 @@ public class Home extends Fragment {
     TextView bt_ic_tk, textView, tv_balance;
     BottomNavigationView bottomNavigationView;
 
+    MaterialCardView seeMoreButton, closeButton;
+    LinearLayout categoryLayout;
+    View line, line1;
+
+    ImageSlider imageSlider;
 
 
 
@@ -47,8 +61,58 @@ public class Home extends Fragment {
         tv_balance = viewhome.findViewById(R.id.tv_balance);
         TopBarLayout = viewhome.findViewById(R.id.TopBarLayout);
 
+        seeMoreButton = viewhome.findViewById(R.id.seeMoreButton);
+        closeButton = viewhome.findViewById(R.id.closeButton);
+        categoryLayout = viewhome.findViewById(R.id.categoryLayout);
+        line = viewhome.findViewById(R.id.line);
+        line1 = viewhome.findViewById(R.id.line1);
+        imageSlider = viewhome.findViewById(R.id.image_slider);
+
+
+        // প্রথমে ক্যাটাগরি কম দেখানোর জন্য সেট করা
+        categoryLayout.setVisibility(View.GONE);
+        closeButton.setVisibility(View.GONE);
+
+
+        // See More ক্লিক করলে Expand হবে
+        seeMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryLayout.setVisibility(View.VISIBLE);
+                seeMoreButton.setVisibility(View.GONE);
+                closeButton.setVisibility(View.VISIBLE);
+                line.setVisibility(GONE);
+                line1.setVisibility(VISIBLE);
+            }
+        });
+
+        // Close ক্লিক করলে আগের অবস্থায় ফিরে যাবে
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryLayout.setVisibility(View.GONE);
+                seeMoreButton.setVisibility(View.VISIBLE);
+                closeButton.setVisibility(View.GONE);
+                line.setVisibility(VISIBLE);
+                line1.setVisibility(GONE);
+            }
+        });
+
 
         Check_Balance_Method();
+
+
+
+
+        List<SlideModel> imageList = new ArrayList<>();
+
+        // Image URLs with Titles
+        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
+
+
+        imageSlider.setImageList(imageList) ;
 
 
         return viewhome;

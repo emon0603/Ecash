@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentClass.Home">
+    tools:context=".FragmentClass.Home"
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:id="@+id/TopBarLayout"
@@ -141,4 +143,684 @@
 
     </LinearLayout>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10ssp"
+                android:layout_marginTop="-20dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- প্রথমে দেখানো ক্যাটাগরি গুলো -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/send_money"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Send Money"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/mobile_recharge"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mobile Recharge"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/send_money"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cash out"
+                                android:textColor="#595959"
+                                android:layout_marginTop="-10dp"
+                                android:textSize="@dimen/_10ssp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/make_payment"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Make Payment"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/add_money"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add Money"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/pay_bill"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pay Bill"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/send_money"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cash out"
+                                android:textColor="#595959"
+                                android:layout_marginTop="-10dp"
+                                android:textSize="@dimen/_10ssp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/donation"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Donation"
+                                android:textColor="#595959"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginTop="-10dp"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/send_money"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Send Money"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_9ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/mobile_recharge"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mobile Recharge"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_9ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/send_money"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cash out"
+                                    android:textColor="#595959"
+                                    android:layout_marginTop="-10dp"
+                                    android:textSize="@dimen/_9ssp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/make_payment"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Make Payment"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_9ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/line"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_60sdp"
+                            android:alpha="0.7"
+                            android:background="@drawable/bg_light_blue"
+
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:orientation="vertical"
+                            android:layout_centerInParent="true"
+
+                            >
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/seeMoreButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                app:cardCornerRadius="@dimen/_20sdp"
+                                app:cardElevation="@dimen/_20sdp"
+                                >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    >
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="See More"
+                                        android:textColor="?attr/colorPrimary"
+                                        android:paddingTop="@dimen/_5sdp"
+                                        android:paddingBottom="@dimen/_5sdp"
+                                        android:paddingLeft="@dimen/_5sdp"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_arrow_down"
+                                        app:tint="?attr/colorPrimary"
+                                        android:layout_gravity="center"
+                                        android:layout_marginRight="@dimen/_5sdp"
+
+                                        />
+
+
+
+
+                                </LinearLayout>
+
+
+
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+
+                    <!-- এক্সট্রা ক্যাটাগরি, যা শুরুতে হাইড থাকবে -->
+                    <LinearLayout
+                        android:id="@+id/categoryLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_55sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/send_money"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Send Money"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_55sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/mobile_recharge"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mobile Recharge"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_55sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/send_money"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cash out"
+                                    android:textColor="#595959"
+                                    android:layout_marginTop="-10dp"
+                                    android:textSize="@dimen/_10ssp"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                >
+
+                                <ImageView
+                                    android:layout_width="@dimen/_55sdp"
+                                    android:layout_height="@dimen/_50sdp"
+                                    android:src="@drawable/make_payment"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Make Payment"
+                                    android:textColor="#595959"
+                                    android:textSize="@dimen/_10ssp"
+                                    android:layout_marginTop="-10dp"
+                                    />
+
+                            </LinearLayout>
+
+
+
+
+
+
+
+                        </LinearLayout>
+                        <!-- Close Button -->
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <View
+                                android:id="@+id/line1"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_60sdp"
+                                android:alpha="0.7"
+                                android:background="@drawable/bg_light_blue"
+
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:padding="@dimen/_10sdp"
+                                android:orientation="vertical"
+                                android:layout_centerInParent="true"
+
+                                >
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/closeButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:gravity="center"
+                                    app:cardCornerRadius="@dimen/_20sdp"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    >
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:layout_gravity="center"
+                                        android:gravity="center"
+                                        >
+
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Close"
+                                            android:textColor="?attr/colorPrimary"
+                                            android:paddingLeft="@dimen/_10sdp"
+                                            android:paddingRight="@dimen/_10sdp"
+                                            android:paddingTop="@dimen/_5sdp"
+                                            android:paddingBottom="@dimen/_5sdp"
+                                            />
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/baseline_keyboard_arrow_up_24"
+                                            app:tint="?attr/colorPrimary"
+                                            android:layout_gravity="center"
+                                            android:layout_marginRight="@dimen/_5sdp"
+
+                                            />
+
+
+
+
+                                    </LinearLayout>
+
+
+
+
+
+                                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+                            </LinearLayout>
+
+
+
+
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_100sdp"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_delay="1000"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            />
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
