@@ -7,6 +7,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -24,7 +25,14 @@ import android.widget.TextView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.ecash.AddMoneyActivity;
+import com.example.ecash.CashOutActivity;
+import com.example.ecash.DonationActivity;
+import com.example.ecash.MakePaymentActivity;
+import com.example.ecash.MobileRechargeActivity;
+import com.example.ecash.PayBillActivity;
 import com.example.ecash.R;
+import com.example.ecash.SendMoneyActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -41,7 +49,7 @@ public class Home extends Fragment {
     BottomNavigationView bottomNavigationView;
 
     MaterialCardView seeMoreButton, closeButton;
-    LinearLayout categoryLayout;
+    LinearLayout categoryLayout, send_money_btn, mobile_recharge_btn, cashout_btn, makepayment_btn, addmoney_btn, paybill_btn, donation_btn;
     View line, line1;
 
     ImageSlider imageSlider;
@@ -67,12 +75,46 @@ public class Home extends Fragment {
         line = viewhome.findViewById(R.id.line);
         line1 = viewhome.findViewById(R.id.line1);
         imageSlider = viewhome.findViewById(R.id.image_slider);
+        send_money_btn = viewhome.findViewById(R.id.send_money_btn);
+        mobile_recharge_btn = viewhome.findViewById(R.id.mobile_recharge_btn);
+        cashout_btn = viewhome.findViewById(R.id.cashout_btn);
+        makepayment_btn = viewhome.findViewById(R.id.makepayment_btn);
+        addmoney_btn = viewhome.findViewById(R.id.addmoney_btn);
+        paybill_btn = viewhome.findViewById(R.id.paybill_btn);
+        donation_btn = viewhome.findViewById(R.id.donation_btn);
+
+
 
 
         // প্রথমে ক্যাটাগরি কম দেখানোর জন্য সেট করা
         categoryLayout.setVisibility(View.GONE);
         closeButton.setVisibility(View.GONE);
 
+
+
+
+        Check_Balance_Method();
+
+
+
+
+        List<SlideModel> imageList = new ArrayList<>();
+
+        // Image URLs with Titles
+        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.banner_two,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.banner_three,  ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.banner_four,  ScaleTypes.CENTER_CROP));
+
+
+        imageSlider.setImageList(imageList) ;
+
+        All_button_click();
+
+        return viewhome;
+    }
+
+    private void All_button_click(){
 
         // See More ক্লিক করলে Expand হবে
         seeMoreButton.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +127,6 @@ public class Home extends Fragment {
                 line1.setVisibility(VISIBLE);
             }
         });
-
         // Close ক্লিক করলে আগের অবস্থায় ফিরে যাবে
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,26 +139,30 @@ public class Home extends Fragment {
             }
         });
 
-
-        Check_Balance_Method();
-
-
-
-
-        List<SlideModel> imageList = new ArrayList<>();
-
-        // Image URLs with Titles
-        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.banner_one,  ScaleTypes.CENTER_CROP));
+        // Call the reusable method for each button with the respective target activity
+        setOnClickListener(send_money_btn, SendMoneyActivity.class);
+        setOnClickListener(mobile_recharge_btn, MobileRechargeActivity.class);
+        setOnClickListener(cashout_btn, CashOutActivity.class);
+        setOnClickListener(makepayment_btn, MakePaymentActivity.class);
+        setOnClickListener(addmoney_btn, AddMoneyActivity.class);
+        setOnClickListener(paybill_btn, PayBillActivity.class);
+        setOnClickListener(donation_btn, DonationActivity.class);
 
 
-        imageSlider.setImageList(imageList) ;
 
 
-        return viewhome;
+
+
+
     }
 
+    // Reusable method for setting onClick listeners and navigating between activities
+    private void setOnClickListener(LinearLayout button, Class<?> targetActivity) {
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), targetActivity);
+            startActivity(intent);
+        });
+    }
 
     private void Check_Balance_Method(){
 

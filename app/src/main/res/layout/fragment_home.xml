@@ -174,6 +174,7 @@
                         android:weightSum="4">
 
                         <LinearLayout
+                            android:id="@+id/send_money_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -198,6 +199,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/mobile_recharge_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -222,6 +224,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/cashout_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -246,6 +249,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/makepayment_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -284,6 +288,7 @@
                         android:weightSum="4">
 
                         <LinearLayout
+                            android:id="@+id/addmoney_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -308,6 +313,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/paybill_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -356,6 +362,7 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/donation_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
