@@ -23,6 +23,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecash.Adapter.ContactAdapter;
+import com.example.ecash.Adapter.NotificationAdapter;
+import com.example.ecash.ModelClass.Contact_item;
+import com.example.ecash.ModelClass.Notification_item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SendMoneyActivity extends AppCompatActivity {
+
+    private List<Contact_item> contact_List;;
+
+    ContactAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +55,15 @@ public class SendMoneyActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Sample data
-        List<String> items = new ArrayList<>();
-        for (int i = 1; i <= 20; i++) {
-            items.add(String.valueOf(i));
-        }
+        contact_List = new ArrayList<>();
+        contact_List.add(new Contact_item("Emon", "01783228430"));
+        contact_List.add(new Contact_item("Afsffddfd", "8743228430"));
+        contact_List.add(new Contact_item("waefg", "65143228430"));
+        contact_List.add(new Contact_item("aafwe", "426283228430"));
+        contact_List.add(new Contact_item("fdhbEmon", "313228430"));
+        contact_List.add(new Contact_item("nhhgnh", "ghnhgn1401"));
 
-        // Adapter set kora
-        ContactAdapter adapter = new ContactAdapter(items);
+       adapter = new ContactAdapter(contact_List);
         recyclerView.setAdapter(adapter);
 
         //fetchContacts();

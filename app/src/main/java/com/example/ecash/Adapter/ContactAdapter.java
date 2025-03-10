@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ecash.ModelClass.Contact_item;
 import com.example.ecash.R;
 
 import java.util.List;
@@ -16,9 +17,9 @@ import java.util.Random;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
 
-    private final List<String> items;
+    private final List<Contact_item> items;
 
-    public ContactAdapter(List<String> items) {
+    public ContactAdapter(List<Contact_item> items) {
         this.items = items;
     }
 
@@ -31,7 +32,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String text = holder.name_tv.getText().toString();  // Full name nichi
+        Contact_item item = items.get(position);
+        String text = item.getName().toString();  // Full name nichi
 
         // Prothom character niye `itemText` e set kora
         if (!text.isEmpty()) {
@@ -45,6 +47,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
         // Round background er color change kora
         holder.itemContainer.getBackground().setTint(randomColor);
+
+
+        holder.name_tv.setText(item.getName());
+        holder.number_tv.setText(item.getNumber());
     }
 
 
@@ -54,7 +60,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView itemText, name_tv;
+        TextView itemText, name_tv, number_tv;
         View itemContainer;
 
         public ViewHolder(@NonNull View itemView) {
@@ -62,6 +68,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             itemText = itemView.findViewById(R.id.item_text);
             itemContainer = itemView.findViewById(R.id.item_container);
             name_tv = itemView.findViewById(R.id.name_tv);
+            number_tv = itemView.findViewById(R.id.number_tv);
         }
     }
 }
