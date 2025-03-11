@@ -1,0 +1,84 @@
+<!-- fragment_bottom_sheet.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_nextbt"
+        android:backgroundTint="@color/white"
+
+
+        >
+
+
+        <TextView
+            android:id="@+id/item1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Before you proceed"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/send_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="017554555"
+            android:textSize="@dimen/_24sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please check if the number is correct"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_nextbt"
+            android:backgroundTint="?attr/colorPrimary"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20ssp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes, the number is correct"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12ssp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <!-- Add more options as needed -->
+</LinearLayout>

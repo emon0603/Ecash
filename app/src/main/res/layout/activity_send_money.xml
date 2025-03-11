@@ -10,6 +10,8 @@
     android:background="#C0364C"
 
     >
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -140,6 +142,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
              />
+
+        <!-- যদি ডাটা না থাকে তাহলে দেখাবে -->
+        <LinearLayout
+
+            android:id="@+id/no_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/sendMoneyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send Money to"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#858585"/>
+
+            <Button
+                android:id="@+id/continueButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to continue"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
 
 
 
