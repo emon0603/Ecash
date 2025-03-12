@@ -14,9 +14,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:background="@color/white"
+        android:layout_weight="1"
         >
 
         <!-- AppBar with Toolbar -->
@@ -37,6 +38,99 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipient"
+            android:gravity="center|left"
+            android:layout_gravity="center|left"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center|left"
+            android:layout_marginLeft="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            >
+
+
+            <RelativeLayout
+                android:id="@+id/item_container"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="vertical"
+                android:background="@drawable/round_button_rand"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/itemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    />
+                <ImageView
+                    android:id="@+id/item_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/_15sdp"
+                >
+
+                <TextView
+                    android:id="@+id/name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emon"
+                    android:gravity="center|left"
+                    android:layout_gravity="center|left"
+                    />
+
+                <TextView
+                    android:id="@+id/numberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01783228430"
+                    android:gravity="center|left"
+                    android:layout_gravity="center|left"
+
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="#EBEBEB"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,6 +157,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:background="@null"
+                android:inputType="number"
+
                 />
 
             <TextView
@@ -103,13 +199,38 @@
             />
 
 
-
-
-
-
-
-
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/next_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_nextbt"
+        android:backgroundTint="?attr/colorPrimary"
+        android:padding="@dimen/_10sdp"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+
+    </RelativeLayout>
 
 
 

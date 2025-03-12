@@ -4,6 +4,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ecash.ModelClass.Contact_item;
 import com.example.ecash.R;
 import com.example.ecash.Room.User;
+import com.example.ecash.sendmoney.send_amount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +89,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
         // Round background er color change kora
         holder.itemContainer.getBackground().setTint(randomColor);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, send_amount.class); // NewActivity-এর পরিবর্তে আপনার গন্তব্য অ্যাক্টিভিটি দিন
+            intent.putExtra("name", user.getName());
+            intent.putExtra("number", user.getNumber());
+            context.startActivity(intent);
+        });
 
 
 

@@ -45,7 +45,7 @@ public class SendMoneyActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     LinearLayout noResultLayout;
     EditText search_ed;
-    TextView sendMoneyText;
+    TextView sendMoneyText, nameTextView, numberTextView;
     private List<Contact_item> contact_List;;
 
     ContactAdapter adapter;
@@ -70,6 +70,7 @@ public class SendMoneyActivity extends AppCompatActivity {
         noResultLayout = findViewById(R.id.no_result_layout);
         sendMoneyText = findViewById(R.id.sendMoneyText);
         continueButton = findViewById(R.id.continueButton);
+
 
         userDatabase = UserDatabase.getDatabase(this);
         userDao = userDatabase.userDao();

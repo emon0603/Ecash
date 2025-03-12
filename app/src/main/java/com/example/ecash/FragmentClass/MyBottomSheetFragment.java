@@ -33,7 +33,7 @@ public class MyBottomSheetFragment extends BottomSheetDialogFragment {
         next_btn = view.findViewById(R.id.next_btn);
         send_num_tv.setText(number);
 
-        
+
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

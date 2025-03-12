@@ -20,6 +20,12 @@
         android:theme="@style/Theme.Ecash"
         tools:targetApi="31">
         <activity
+            android:name=".Global.Press_and_Send"
+            android:exported="false" />
+        <activity
+            android:name=".Global.Enter_PIN"
+            android:exported="false" />
+        <activity
             android:name=".DonationActivity"
             android:exported="false" />
         <activity
