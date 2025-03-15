@@ -134,8 +134,51 @@
 
     </LinearLayout>
 
+    <!-- Animation Bar -->
+    <ImageView
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/holo_blue_dark"
+        android:translationX="0dp" />
 
-    
+
+    <LinearLayout
+        android:id="@+id/tap_and_hold_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_send_and_press"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+
+
+        <ImageView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_launcher_foreground"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap and hold for Send Money"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17ssp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
 
 
 

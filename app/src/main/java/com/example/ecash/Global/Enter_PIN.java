@@ -86,7 +86,7 @@ public class Enter_PIN extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // startActivity(new Intent(send_amount.this, Enter_PIN.class));
+                startActivity(new Intent(Enter_PIN.this, Press_and_Send.class));
             }
         });
 
